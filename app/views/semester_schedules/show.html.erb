@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Userid:</b>
+  <%= @semester_schedule.UserId %>
+</p>
+
+<p>
+  <b>Semesterclassid:</b>
+  <%= @semester_schedule.SemesterClassId %>
+</p>
+
+
+<%= link_to 'Edit', edit_semester_schedule_path(@semester_schedule) %> |
+<%= link_to 'Back', semester_schedules_path %>

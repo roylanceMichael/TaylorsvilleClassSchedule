@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  UserId: MyString
+  SemesterClassId: 1
+
+two:
+  UserId: MyString
+  SemesterClassId: 1

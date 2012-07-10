@@ -1,0 +1,2 @@
+module SemesterSchedulesHelper
+end

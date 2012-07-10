@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Name: MyString
+  Description: MyString
+  SemesterId: 1
+  TimeSlotId: 1
+
+two:
+  Name: MyString
+  Description: MyString
+  SemesterId: 1
+  TimeSlotId: 1

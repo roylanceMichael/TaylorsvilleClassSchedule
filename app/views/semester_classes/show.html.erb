@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @semester_class.Name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @semester_class.Description %>
+</p>
+
+<p>
+  <b>Semesterid:</b>
+  <%= @semester_class.SemesterId %>
+</p>
+
+<p>
+  <b>Timeslotid:</b>
+  <%= @semester_class.TimeSlotId %>
+</p>
+
+
+<%= link_to 'Edit', edit_semester_class_path(@semester_class) %> |
+<%= link_to 'Back', semester_classes_path %>

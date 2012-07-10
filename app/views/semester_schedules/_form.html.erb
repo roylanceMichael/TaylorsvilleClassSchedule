@@ -1,0 +1,25 @@
+<%= form_for(@semester_schedule) do |f| %>
+  <% if @semester_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@semester_schedule.errors.count, "error") %> prohibited this semester_schedule from being saved:</h2>
+
+      <ul>
+      <% @semester_schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :UserId %><br />
+    <%= f.text_field :UserId %>
+  </div>
+  <div class="field">
+    <%= f.label :SemesterClassId %><br />
+    <%= f.number_field :SemesterClassId %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
