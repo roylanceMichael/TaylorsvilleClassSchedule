@@ -6,6 +6,7 @@
     <th>Description</th>
     <th>Semesterid</th>
     <th>Timeslotid</th>
+	<th>SchoolClassid</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= semester_class.Description %></td>
     <td><%= semester_class.SemesterId %></td>
     <td><%= semester_class.TimeSlotId %></td>
+	<td><%= semester_class.SchoolClassId %></td>
     <td><%= link_to 'Show', semester_class %></td>
     <td><%= link_to 'Edit', edit_semester_class_path(semester_class) %></td>
     <td><%= link_to 'Destroy', semester_class, confirm: 'Are you sure?', method: :delete %></td>
