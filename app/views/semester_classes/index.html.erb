@@ -2,9 +2,7 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Semesterid</th>
+    <th>Semester</th>
     <th>Timeslotid</th>
 	<th>SchoolClassid</th>
     <th></th>
@@ -14,11 +12,9 @@
 
 <% @semester_classes.each do |semester_class| %>
   <tr>
-    <td><%= semester_class.Name %></td>
-    <td><%= semester_class.Description %></td>
-    <td><%= semester_class.SemesterId %></td>
-    <td><%= semester_class.TimeSlotId %></td>
-	<td><%= semester_class.SchoolClassId %></td>
+    <td><%= semester_class.Semester.Name %></td>
+    <td><%= semester_class.TimeSlot.Name %></td>
+	<td><%= semester_class.SchoolClass.Name %></td>
     <td><%= link_to 'Show', semester_class %></td>
     <td><%= link_to 'Edit', edit_semester_class_path(semester_class) %></td>
     <td><%= link_to 'Destroy', semester_class, confirm: 'Are you sure?', method: :delete %></td>
