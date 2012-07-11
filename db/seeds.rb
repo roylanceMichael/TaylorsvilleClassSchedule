@@ -6,9 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#now for the semesters
+fall2012 = Semester.create(Name:'Fall2012', Description:'Fall 2012')
+
+#timeSlots
+oneA = TimeSlot.create(Name:'1A', Description:'1A')
+oneB = TimeSlot.create(Name:'1B', Description:'1B')
+oneC = TimeSlot.create(Name:'1C', Description:'1C')
+oneD = TimeSlot.create(Name:'1D', Description:'1D')
+twoA = TimeSlot.create(Name:'2A', Description:'2A')
+twoB = TimeSlot.create(Name:'2B', Description:'2B')
+twoC = TimeSlot.create(Name:'2C', Description:'2C')
+twoD = TimeSlot.create(Name:'2D', Description:'2D')
+
 #art first
 artDept = Department.create( Name: 'ART', Description: 'Art')
 ceramics1 = SchoolClass.create( Name:'Ceramics1', Description:'Ceramics 1', DepartmentId: artDept.id )
+ceramicsCC = SchoolClass.create( Name:'CeramicsCC', Description:'Ceramics CC', DepartmentId: artDept.id )
 painting1 = SchoolClass.create( Name:'Painting1', Description:'Painting 1', DepartmentId: artDept.id )
 painting2 = SchoolClass.create( Name:'Painting2', Description:'Painting 2', DepartmentId: artDept.id )
 drawing1 = SchoolClass.create( Name:'Drawing1', Description:'Drawing 1', DepartmentId: artDept.id )
@@ -20,6 +34,33 @@ graphicArt = SchoolClass.create( Name:'GraphicArt', Description:'Graphic Art', D
 apArtHistory = SchoolClass.create( Name:'ApArtHistory', Description:'AP Art History', DepartmentId: artDept.id )
 watercolorCC = SchoolClass.create( Name:'WatercolorCC', Description:'Watercolor CC', DepartmentId: artDept.id )
 apArtStudio = SchoolClass.create( Name:'ApArtStudio', Description:'AP Art Studio', DepartmentId: artDept.id )
+
+#2A
+SemesterClass.create(SchoolClassId: painting1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: painting2.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: drawing1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: painting1.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: ceramicsCC.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: printmaking.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: drawingCC.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: ceramics1.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: drawing3.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: ceramics1.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: graphicArt.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: apArtHistory.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: drawing1.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: ceramics1.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: watercolorCC.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: drawing1.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: ceramics2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: drawing2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: apArtStudio.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
 busDept = Department.create( Name: 'BUSINESS', Description: 'Business')
 compTech1 = SchoolClass.create( Name:'ComputerTech1', Description:'Computer Tech 1', DepartmentId: busDept.id )
@@ -34,8 +75,39 @@ webPageDesign = SchoolClass.create( Name:'WebPageDesign', Description:'Web Page 
 digitalApps = SchoolClass.create( Name:'DigitalApps', Description:'Digital Apps', DepartmentId: busDept.id )
 travelTourism = SchoolClass.create( Name:'TravelTourism', Description:'Travel/Tourism', DepartmentId: busDept.id )
 
+#2A
+SemesterClass.create(SchoolClassId: busLaw.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: compTech1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: accounting1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: compTech1.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: compTechH.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: accounting1.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: compTech1.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: compTech1.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: marketingCC.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: businessComm.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: businessComm.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: compTech2.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: marketingTT.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: webPageDesign.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: marketingTT.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: digitalApps.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: travelTourism.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+
 driveredDept = Department.create( Name: 'DRIVERSED', Description: 'Driver''s Ed')
 driversEd = SchoolClass.create( Name:'DriversEd', Description:'Driver''s ed', DepartmentId: driveredDept.id )
+
+#2A etc
+SemesterClass.create(SchoolClassId: driversEd.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: driversEd.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: driversEd.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: driversEd.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
 
 engDept = Department.create( Name: 'ENGLISH', Description: 'English')
 english10 = SchoolClass.create( Name:'English10', Description:'English 10', DepartmentId: engDept.id )
@@ -59,6 +131,63 @@ eslOralLang = SchoolClass.create( Name:'EslOralLang', Description:'Esl Oral Lang
 reading = SchoolClass.create( Name:'Reading', Description:'Reading', DepartmentId: engDept.id )
 debate = SchoolClass.create( Name:'Debate', Description:'Debate', DepartmentId: engDept.id )
 
+#2A
+SemesterClass.create(SchoolClassId: comCC.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: read180.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: apEngLit.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: english11h.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: humanities.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: english11.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: eslEnglish12.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: eslEnglish10.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: eslEnglish11.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: eslEnglish12.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: profReadWrite.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: english10h.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: humanities.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: english12.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: english11h.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: english11.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: journalism.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: english12.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: apEngLit.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: apLanguage.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: english11.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: english1010CC.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: english12.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: english11.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: apLanguage.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: humanities.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: reading.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: english1010CC.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: english10h.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: eslOralLang.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: english11.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: apLanguage.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: humanities.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: reading.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: english12.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: english10h.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: debate.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: english12.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: humanities.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: english11.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: english10h.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: journalism.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+
 famDept = Department.create( Name: 'FAMILYCONSUMER', Description: 'Family and Consumer')
 fashionInstitute = SchoolClass.create( Name:'FashionInstitute', Description:'Fashion Institute', DepartmentId: famDept.id )
 foods = SchoolClass.create( Name:'Foods', Description:'Foods', DepartmentId: famDept.id )
@@ -72,6 +201,36 @@ proStart = SchoolClass.create( Name:'ProStart', Description:'Pro Start', Departm
 sportSew = SchoolClass.create( Name:'SportSew', Description:'Sport Sew', DepartmentId: famDept.id )
 interDesignCC = SchoolClass.create( Name:'InterDesignCC', Description:'Inter Design CC', DepartmentId: famDept.id )
 humanDevCC = SchoolClass.create( Name:'HumanDevCC', Description:'Human Development CC', DepartmentId: famDept.id )
+
+#2A
+SemesterClass.create(SchoolClassId: adultRolesCC.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: fashionInstitute.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: foods.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: childCare.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: fashionStrat.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: foods.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: childCare.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: foods.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: humanDevCC.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: adultRoles.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: designerSew.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: foods.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: adultRolesCC.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: protStart.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: childCare.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: adultRoles.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: interDesignCC.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: proStart.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: childCare.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: adultRoles.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: childDev.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: sportSew.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
 foreignDept = Department.create( Name: 'FOREIGNLANGUAGE', Description: 'Foreign Language')
 chinese1 = SchoolClass.create( Name:'Chinese1', Description:'Chinese 1', DepartmentId: foreignDept.id )
@@ -91,6 +250,38 @@ french2 = SchoolClass.create( Name:'French2', Description:'French 2', Department
 french3 = SchoolClass.create( Name:'French3', Description:'French 3', DepartmentId: foreignDept.id )
 french4 = SchoolClass.create( Name:'French4', Description:'French 4', DepartmentId: foreignDept.id )
 
+#2A
+SemesterClass.create(SchoolClassId: chinese1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: spanish1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: german1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: spanishN.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: chinese3.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: chinese4.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: german2.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: german3.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: spanish3.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: spanish4.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: spanish1.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: german1.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: spanish3.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: spanish4.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: french1.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: spanish2.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: french2.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: french3.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: french4.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: spanish2.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: french1.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: spanish2.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: french2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: spanish2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+
 careerDept = Department.create( Name: 'CAREERTECH', Description: 'Career and Technical Education')
 photo1 = SchoolClass.create( Name:'Photo1', Description:'Photo 1', DepartmentId: careerDept.id )
 weldTechAdv = SchoolClass.create( Name:'WeldTechADV', Description:'Weld Tech ADV/Weld CC', DepartmentId: careerDept.id )
@@ -104,6 +295,35 @@ woodscc = SchoolClass.create( Name:'WoodsCC', Description:'Woods CC/CAB', Depart
 yearbook = SchoolClass.create( Name:'Yearbook', Description:'Yearbook', DepartmentId: careerDept.id )
 genService = SchoolClass.create( Name:'GenService', Description:'General Service', DepartmentId: careerDept.id )
 
+#2A
+SemesterClass.create(SchoolClassId: photo1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: weldTechAdv.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: introAuto.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: photo1.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: weldInter.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: yearbook.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: weldInter.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: autoMain.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: photo1.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: welding.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: introAuto.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: photo1.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: welding.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: woods1.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: introAuto.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: digitalMedia.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: woodscc.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: yearbook.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: welding.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: woods1.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: genService.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+
 mathDept = Department.create( Name: 'MATH', Description: 'Mathematics')
 geometry = SchoolClass.create( Name:'Geometry', Description:'Geometry', DepartmentId: mathDept.id )
 math2 = SchoolClass.create( Name:'Math2', Description:'Math 2', DepartmentId: mathDept.id )
@@ -112,11 +332,55 @@ modernMath = SchoolClass.create( Name:'ModernMath', Description:'Modern Math', D
 apCalculus = SchoolClass.create( Name:'ApCalculus', Description:'AP Calculus', DepartmentId: mathDept.id )
 apStatistics = SchoolClass.create( Name:'ApStatistics', Description:'AP Statistics', DepartmentId: mathDept.id )
 math2H = SchoolClass.create( Name:'Math2H', Description:'Math 2 H', DepartmentId: mathDept.id )
+math1010CC = SchoolClass.create( Name:'Math1010CC', Description:'Math 1010 CC', DepartmentId: mathDept.id )
 math1030CC = SchoolClass.create( Name:'Math1030CC', Description:'Math 1030 CC', DepartmentId: mathDept.id )
 statistics = SchoolClass.create( Name:'Statistics', Description:'Statistics', DepartmentId: mathDept.id )
 math1050CC = SchoolClass.create( Name:'Math1050CC', Description:'Math 1050 CC', DepartmentId: mathDept.id )
 precalc = SchoolClass.create( Name:'PreCalculus', Description:'Pre-Calculus', DepartmentId: mathDept.id )
 precalch = SchoolClass.create( Name:'PreCalculusH', Description:'Pre-Calculus H', DepartmentId: mathDept.id )
+
+#2A
+SemesterClass.create(SchoolClassId: geometry.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: algebra2.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: math1030CC.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: statistics.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: math1010CC.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: apCalculus.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: algebra2.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: algebra2.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: math2H.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: geometry.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: math1050CC.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: algebra2.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: statistics.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: apCalculus.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: precalc.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: math2H.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: math1010CC.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: algebra2.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: statistics.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: precalch.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: apCalculus.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: algebra2.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: modernMath.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: precalch.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: math2H.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: algebra2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: precalc.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: precalch.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
 musicDept = Department.create( Name: 'MUSICTHEATRE', Description: 'Music and Theatre')
 harmony1 = SchoolClass.create( Name:'Harmony1', Description:'Harmony 1', DepartmentId: musicDept.id )
@@ -129,6 +393,7 @@ theatre2 = SchoolClass.create( Name:'Theatre2', Description:'Theatre 2', Departm
 theatre3 = SchoolClass.create( Name:'Theatre3', Description:'Theatre 3', DepartmentId: musicDept.id )
 theatre4 = SchoolClass.create( Name:'Theatre4', Description:'Theatre 4', DepartmentId: musicDept.id )
 concertBand = SchoolClass.create( Name:'ConcertBand', Description:'Concert Band', DepartmentId: musicDept.id )
+concertChoir = SchoolClass.create( Name:'ConcertChoir', Description:'Concert Choir', DepartmentId: musicDept.id )
 madrigals = SchoolClass.create( Name:'Madrigals', Description:'Madrigals', DepartmentId: musicDept.id )
 guitar1 = SchoolClass.create( Name:'Guitar1', Description:'Guitar 1', DepartmentId: musicDept.id )
 orchestra = SchoolClass.create( Name:'Orchestra', Description:'Orchestra', DepartmentId: musicDept.id )
@@ -138,6 +403,31 @@ jazzEnsemble = SchoolClass.create( Name:'JazzEnsemble', Description:'Jazz Ensemb
 sopranoAlto = SchoolClass.create( Name:'SopranoAlto', Description:'SopranoAlto', DepartmentId: musicDept.id )
 stageProdCrew = SchoolClass.create( Name:'StageProdCrew', Description:'Stage Prod/Crew', DepartmentId: musicDept.id )
 
+#2A
+SemesterClass.create(SchoolClassId: jrChoir.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: theatre1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: concertBand.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: madrigals.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: theatre2.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: theatre3.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: guitar1.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: theatre4.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: orchestra.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: tenorBass.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: filmMaking.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: concertChoir.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: filmMaking.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: jazzEnsembly.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: sopranoAlto.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: guitar1.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: stageProdCrew.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+
 otherDept = Department.create( Name: 'OTHER', Description: 'Other')
 lawEnforcement = SchoolClass.create( Name:'LawEnforcement', Description:'Law Enforcement', DepartmentId: otherDept.id )
 jrotc1 = SchoolClass.create( Name:'JROTC1', Description:'JROTC1', DepartmentId: otherDept.id )
@@ -145,6 +435,28 @@ jrotc2 = SchoolClass.create( Name:'JROTC2', Description:'JROTC2', DepartmentId: 
 jrotc3 = SchoolClass.create( Name:'JROTC3', Description:'JROTC3', DepartmentId: otherDept.id )
 schoolSuccess = SchoolClass.create( Name:'SchoolSuccess', Description:'School Success', DepartmentId: otherDept.id )
 eslDirectedStudy = SchoolClass.create( Name:'EslDirectedStudy', Description:'ESL Directed Study', DepartmentId: otherDept.id )
+
+#2A
+SemesterClass.create(SchoolClassId: jrotc1.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: jrotc2.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: schoolSuccess.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+#4A
+SemesterClass.create(SchoolClassId: jrotc1.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: jrotc2.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: jrotc3.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: schoolSuccess.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: jrotc1.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: jrotc2.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: schoolSuccess.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: schoolSuccess.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: jrotc1.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: jrotc2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: eslDirectedStudy.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
 peDept = Department.create( Name: 'PE', Description: 'P.E. and Health')
 dance1 = SchoolClass.create( Name:'Dance1', Description:'Dance 1', DepartmentId: peDept.id )
@@ -164,10 +476,47 @@ advFitLife = SchoolClass.create( Name:'AdvFitForLife', Description:'Advanced Fit
 athWeightTrain = SchoolClass.create( Name:'AthWeightTrain', Description:'Athletes Weight Training', DepartmentId: peDept.id )
 girlAthletics = SchoolClass.create( Name:'GirlAthletics', Description:'Girl Athletics', DepartmentId: peDept.id )
 
+#2A
+SemesterClass.create(SchoolClassId: dance2.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: weightTraining.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: fitLife.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: fitLife.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: danceCompany.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: boyAthletics.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: socialDance1.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: weightTraining.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: lifetimeSports.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: socialDance1.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: advFitLife.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: dance1.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: athWeightTrain.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: dance3.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: fitLife.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: swimming.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: socialDance2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: socialDance3.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: girlAthletics.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: advFitLife.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+
 scienceDept = Department.create( Name: 'SCIENCE', Description: 'Science')
 biology = SchoolClass.create( Name:'Biology', Description:'Biology', DepartmentId: scienceDept.id )
 biologyH = SchoolClass.create( Name:'BiologyH', Description:'Biology H', DepartmentId: scienceDept.id )
+apPhysics = SchoolClass.create( Name:'ApPhysics', Description:'AP Physics', DepartmentId: scienceDept.id )
 apEnvBio = SchoolClass.create( Name:'ApEnvBio', Description:'AP Environment Biology', DepartmentId: scienceDept.id )
+apChem = SchoolClass.create( Name:'ApChem', Description:'AP Chemistry', DepartmentId: scienceDept.id )
 humanBio = SchoolClass.create( Name:'HumanBiology', Description:'Human Biology', DepartmentId: scienceDept.id )
 wildlifeBio = SchoolClass.create( Name:'WildlifeBiology', Description:'Wildlife Biology', DepartmentId: scienceDept.id )
 physicsH = SchoolClass.create( Name:'PhysicsH', Description:'Physics H', DepartmentId: scienceDept.id )
@@ -176,6 +525,48 @@ sportsMed = SchoolClass.create( Name:'SportsMed', Description:'Sports Med/Sports
 physicsWTech = SchoolClass.create( Name:'PhysicsWTech', Description:'Physics W/Tech', DepartmentId: scienceDept.id )
 zoology = SchoolClass.create( Name:'Zoology', Description:'Zoology', DepartmentId: scienceDept.id )
 botany = SchoolClass.create( Name:'Botany', Description:'Botany', DepartmentId: scienceDept.id )
+
+#2A
+SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: humanBio.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: wildlifeBio.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: physicsH.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: chemistryH.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: sportsMed.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: physicsWTech.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: wildlifeBio.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: chemistryH.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: physicsWTech.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: chemistryH.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: biologyH.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: apPhysics.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: apChem.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: humanBio.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: wildlifeBio.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: apEnvBio.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: chemistryH.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: humanBio.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: wildlifeBio.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: humanBio.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: zoology.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: physicsH.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: chemistryH.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: botany.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: wildlifeBio.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: zoology.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: physicsH.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
 socialDept = Department.create( Name: 'SOCIALSTUDIES', Description: 'Social Studies')
 worldCiv = SchoolClass.create( Name:'WorldCiv', Description:'World Civilization', DepartmentId: socialDept.id )
@@ -188,18 +579,40 @@ financialLit = SchoolClass.create( Name:'FinancialLit', Description:'Financial L
 apEuroHist = SchoolClass.create( Name:'ApEuroHist', Description:'AP European History', DepartmentId: socialDept.id )
 apAmGovt = SchoolClass.create( Name:'ApAmGovt', Description:'AP American Government', DepartmentId: socialDept.id )
 
-#now for the semesters
-fall2012 = Semester.create(Name:'Fall2012', Description:'Fall 2012')
-
-#timeSlots
-oneA = TimeSlot.create(Name:'1A', Description:'1A')
-oneB = TimeSlot.create(Name:'1B', Description:'1B')
-oneC = TimeSlot.create(Name:'1C', Description:'1C')
-oneD = TimeSlot.create(Name:'1D', Description:'1D')
-twoA = TimeSlot.create(Name:'2A', Description:'2A')
-twoB = TimeSlot.create(Name:'2B', Description:'2B')
-twoC = TimeSlot.create(Name:'2C', Description:'2C')
-twoD = TimeSlot.create(Name:'2D', Description:'2D')
+#2A
+SemesterClass.create(SchoolClassId: worldCiv.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: usHistory.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlotId: twoA.id)
+#3A
+SemesterClass.create(SchoolClassId: worldCiv.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: usHistory.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlotId: threeA.id)
+#4A
+SemesterClass.create(SchoolClassId: worldCiv.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: usHistory.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlotId: fourA.id)
+#1B
+SemesterClass.create(SchoolClassId: worldCiv.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: usHistory.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: lawCourts.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: usHistoryH.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+SemesterClass.create(SchoolClassId: financialLit.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
+#2B
+SemesterClass.create(SchoolClassId: usHistory.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: usHistoryH.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+#3B
+SemesterClass.create(SchoolClassId: worldCiv.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: usHistory.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: apEuroHist.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+#4B
+SemesterClass.create(SchoolClassId: worldCiv.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: apAmGovt.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: usHistory.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
+SemesterClass.create(SchoolClassId: financialLit.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
 #hook them up now...
 #1A
