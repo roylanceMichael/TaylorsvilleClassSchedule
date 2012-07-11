@@ -11,21 +11,23 @@ fall2012 = Semester.create(Name:'Fall2012', Description:'Fall 2012')
 
 #timeSlots
 oneA = TimeSlot.create(Name:'1A', Description:'1A')
-oneB = TimeSlot.create(Name:'1B', Description:'1B')
-oneC = TimeSlot.create(Name:'1C', Description:'1C')
-oneD = TimeSlot.create(Name:'1D', Description:'1D')
 twoA = TimeSlot.create(Name:'2A', Description:'2A')
+threeA = TimeSlot.create(Name:'3A', Description:'3A')
+fourA = TimeSlot.create(Name:'4A', Description:'4A')
+oneB = TimeSlot.create(Name:'1B', Description:'1B')
 twoB = TimeSlot.create(Name:'2B', Description:'2B')
-twoC = TimeSlot.create(Name:'2C', Description:'2C')
-twoD = TimeSlot.create(Name:'2D', Description:'2D')
+threeB = TimeSlot.create(Name:'3B', Description:'3B')
+fourB = TimeSlot.create(Name:'4B', Description:'4B')
 
 #art first
 artDept = Department.create( Name: 'ART', Description: 'Art')
 ceramics1 = SchoolClass.create( Name:'Ceramics1', Description:'Ceramics 1', DepartmentId: artDept.id )
+ceramics2 = SchoolClass.create( Name:'Ceramics2', Description:'Ceramics 2', DepartmentId: artDept.id )
 ceramicsCC = SchoolClass.create( Name:'CeramicsCC', Description:'Ceramics CC', DepartmentId: artDept.id )
 painting1 = SchoolClass.create( Name:'Painting1', Description:'Painting 1', DepartmentId: artDept.id )
 painting2 = SchoolClass.create( Name:'Painting2', Description:'Painting 2', DepartmentId: artDept.id )
 drawing1 = SchoolClass.create( Name:'Drawing1', Description:'Drawing 1', DepartmentId: artDept.id )
+drawing2 = SchoolClass.create( Name:'Drawing2', Description:'Drawing 2', DepartmentId: artDept.id )
 ceramicsCC = SchoolClass.create( Name:'CeramicsCC', Description:'Ceramics CC', DepartmentId: artDept.id )
 printmaking = SchoolClass.create( Name:'Printmaking', Description:'Printmaking', DepartmentId: artDept.id )
 drawingCC = SchoolClass.create( Name:'DrawingCC', Description:'Drawing CC', DepartmentId: artDept.id )
@@ -220,7 +222,7 @@ SemesterClass.create(SchoolClassId: designerSew.id, SemesterId: fall2012.id, Tim
 SemesterClass.create(SchoolClassId: foods.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
 #2B
 SemesterClass.create(SchoolClassId: adultRolesCC.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
-SemesterClass.create(SchoolClassId: protStart.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
+SemesterClass.create(SchoolClassId: proStart.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
 SemesterClass.create(SchoolClassId: childCare.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
 #3B
 SemesterClass.create(SchoolClassId: adultRoles.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
@@ -422,7 +424,7 @@ SemesterClass.create(SchoolClassId: filmMaking.id, SemesterId: fall2012.id, Time
 SemesterClass.create(SchoolClassId: concertChoir.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
 SemesterClass.create(SchoolClassId: filmMaking.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
 #3B
-SemesterClass.create(SchoolClassId: jazzEnsembly.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: jazzEnsemble.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
 SemesterClass.create(SchoolClassId: sopranoAlto.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
 #4B
 SemesterClass.create(SchoolClassId: guitar1.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
@@ -503,7 +505,7 @@ SemesterClass.create(SchoolClassId: athWeightTrain.id, SemesterId: fall2012.id, 
 SemesterClass.create(SchoolClassId: dance3.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
 SemesterClass.create(SchoolClassId: fitLife.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
 SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
-SemesterClass.create(SchoolClassId: swimming.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
+SemesterClass.create(SchoolClassId: swimTeam.id, SemesterId: fall2012.id, TimeSlotId: threeB.id)
 #4B
 SemesterClass.create(SchoolClassId: socialDance2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: socialDance3.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
@@ -680,10 +682,3 @@ SemesterClass.create(SchoolClassId: govtCit.id, SemesterId: fall2012.id, TimeSlo
 SemesterClass.create(SchoolClassId: worldCiv.id, SemesterId: fall2012.id, TimeSlotId: oneA.id)
 SemesterClass.create(SchoolClassId: apUSHistory.id, SemesterId: fall2012.id, TimeSlotId: oneA.id)
 SemesterClass.create(SchoolClassId: usHistoryH.id, SemesterId: fall2012.id, TimeSlotId: oneA.id)
-
-#2A
-
-SemesterClass.create(SchoolClassId: drawing1.id, SemesterId: fall2012.id, TimeSlotId: oneA.id)
-SemesterClass.create(SchoolClassId: painting1.id, SemesterId: fall2012.id, TimeSlotId: oneA.id)
-SemesterClass.create(SchoolClassId: painting2.id, SemesterId: fall2012.id, TimeSlotId: oneA.id)
-#going to do the rest by hand, this is boring...
