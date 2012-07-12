@@ -12,7 +12,14 @@
 				<div class="float-left">
 					<p class="site-title"><%= link_to "Taylorsville Schedule Change", home_index_path %></p>
 					<% if(user_signed_in? && current_user.isAdmin()) %>
-						<p><%= link_to "Student Changes", semester_schedules_path %></p>
+						<ul>
+							<li><%= link_to "Student Changes", semester_schedules_path %></li>
+							<li><%= link_to "Semester Classes", semester_classes_path %></li>
+							<li><%= link_to "Departments", departments_path %></li>
+							<li><%= link_to "Classes", school_classes_path %></li>
+							<li><%= link_to "Time Slots", time_slots_path %></li>
+							<li><%= link_to "Semesters", semesters_path %></li>
+						</ul>
 					<% end %>
 				</div>
 				<div class="float-right">
