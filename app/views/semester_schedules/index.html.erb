@@ -1,25 +1,19 @@
-<h1>Listing semester_schedules</h1>
-
-<table>
+<% if user_signed_in? %>
+<table style="width:100%">
   <tr>
-    <th>Userid</th>
-    <th>Semesterclassid</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>User</th>
+    <th>Semester</th>
+	<th>TimeSlot</th>
+	<th>Class</th>
   </tr>
 
 <% @semester_schedules.each do |semester_schedule| %>
   <tr>
-    <td><%= semester_schedule.UserId %></td>
-    <td><%= semester_schedule.SemesterClassId %></td>
-    <td><%= link_to 'Show', semester_schedule %></td>
-    <td><%= link_to 'Edit', edit_semester_schedule_path(semester_schedule) %></td>
-    <td><%= link_to 'Destroy', semester_schedule, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= semester_schedule.User.email %></td>
+    <td><%= semester_schedule.SemesterClass.Semester.Description %></td>
+	<td><%= semester_schedule.SemesterClass.SchoolClass.Description %></td>
+	<td><%= semester_schedule.SemesterClass.TimeSlot.Description %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Semester schedule', new_semester_schedule_path %>
+<% end %>

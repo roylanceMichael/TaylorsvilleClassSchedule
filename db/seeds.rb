@@ -20,7 +20,7 @@ threeB = TimeSlot.create(Name:'3B', Description:'3B')
 fourB = TimeSlot.create(Name:'4B', Description:'4B')
 
 #art first
-artDept = Department.create( Name: 'ART', Description: 'Art')
+artDept = Department.create( Name: 'ART', Description: 'Art', Color: 'lightpink')
 ceramics1 = SchoolClass.create( Name:'Ceramics1', Description:'Ceramics 1', DepartmentId: artDept.id )
 ceramics2 = SchoolClass.create( Name:'Ceramics2', Description:'Ceramics 2', DepartmentId: artDept.id )
 ceramicsCC = SchoolClass.create( Name:'CeramicsCC', Description:'Ceramics CC', DepartmentId: artDept.id )
@@ -64,7 +64,7 @@ SemesterClass.create(SchoolClassId: ceramics2.id, SemesterId: fall2012.id, TimeS
 SemesterClass.create(SchoolClassId: drawing2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: apArtStudio.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-busDept = Department.create( Name: 'BUSINESS', Description: 'Business')
+busDept = Department.create( Name: 'BUSINESS', Description: 'Business', Color: 'lightblue')
 compTech1 = SchoolClass.create( Name:'ComputerTech1', Description:'Computer Tech 1', DepartmentId: busDept.id )
 accounting1 = SchoolClass.create( Name:'Accounting1', Description:'Accounting 1', DepartmentId: busDept.id )
 busLaw = SchoolClass.create( Name:'BusinessLaw', Description:'BusinessLaw', DepartmentId: busDept.id )
@@ -102,7 +102,7 @@ SemesterClass.create(SchoolClassId: marketingTT.id, SemesterId: fall2012.id, Tim
 SemesterClass.create(SchoolClassId: digitalApps.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: travelTourism.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-driveredDept = Department.create( Name: 'DRIVERSED', Description: 'Driver''s Ed')
+driveredDept = Department.create( Name: 'DRIVERSED', Description: 'Driver''s Ed', Color: 'lightyellow')
 driversEd = SchoolClass.create( Name:'DriversEd', Description:'Driver''s ed', DepartmentId: driveredDept.id )
 
 #2A etc
@@ -111,7 +111,7 @@ SemesterClass.create(SchoolClassId: driversEd.id, SemesterId: fall2012.id, TimeS
 SemesterClass.create(SchoolClassId: driversEd.id, SemesterId: fall2012.id, TimeSlotId: oneB.id)
 SemesterClass.create(SchoolClassId: driversEd.id, SemesterId: fall2012.id, TimeSlotId: twoB.id)
 
-engDept = Department.create( Name: 'ENGLISH', Description: 'English')
+engDept = Department.create( Name: 'ENGLISH', Description: 'English', Color: 'lightpink')
 english10 = SchoolClass.create( Name:'English10', Description:'English 10', DepartmentId: engDept.id )
 english11 = SchoolClass.create( Name:'English11', Description:'English 11', DepartmentId: engDept.id )
 english11h = SchoolClass.create( Name:'English11h', Description:'English 11 H', DepartmentId: engDept.id )
@@ -190,7 +190,7 @@ SemesterClass.create(SchoolClassId: english10h.id, SemesterId: fall2012.id, Time
 SemesterClass.create(SchoolClassId: english10.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: journalism.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-famDept = Department.create( Name: 'FAMILYCONSUMER', Description: 'Family and Consumer')
+famDept = Department.create( Name: 'FAMILYCONSUMER', Description: 'Family and Consumer', Color: 'lightblue')
 fashionInstitute = SchoolClass.create( Name:'FashionInstitute', Description:'Fashion Institute', DepartmentId: famDept.id )
 foods = SchoolClass.create( Name:'Foods', Description:'Foods', DepartmentId: famDept.id )
 childDev = SchoolClass.create( Name:'ChildDev', Description:'Child Development', DepartmentId: famDept.id )
@@ -234,7 +234,7 @@ SemesterClass.create(SchoolClassId: adultRoles.id, SemesterId: fall2012.id, Time
 SemesterClass.create(SchoolClassId: childDev.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: sportSew.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-foreignDept = Department.create( Name: 'FOREIGNLANGUAGE', Description: 'Foreign Language')
+foreignDept = Department.create( Name: 'FOREIGNLANGUAGE', Description: 'Foreign Language', Color: 'lightyellow')
 chinese1 = SchoolClass.create( Name:'Chinese1', Description:'Chinese 1', DepartmentId: foreignDept.id )
 chinese2 = SchoolClass.create( Name:'Chinese2', Description:'Chinese 2', DepartmentId: foreignDept.id )
 chinese3 = SchoolClass.create( Name:'Chinese3', Description:'Chinese 3', DepartmentId: foreignDept.id )
@@ -284,7 +284,7 @@ SemesterClass.create(SchoolClassId: spanish2.id, SemesterId: fall2012.id, TimeSl
 SemesterClass.create(SchoolClassId: french2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: spanish2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-careerDept = Department.create( Name: 'CAREERTECH', Description: 'Career and Technical Education')
+careerDept = Department.create( Name: 'CAREERTECH', Description: 'Career and Technical Education', Color: 'lightpink')
 photo1 = SchoolClass.create( Name:'Photo1', Description:'Photo 1', DepartmentId: careerDept.id )
 weldTechAdv = SchoolClass.create( Name:'WeldTechADV', Description:'Weld Tech ADV/Weld CC', DepartmentId: careerDept.id )
 autoMain = SchoolClass.create( Name:'AutoMain', Description:'Auto Main', DepartmentId: careerDept.id )
@@ -326,7 +326,7 @@ SemesterClass.create(SchoolClassId: welding.id, SemesterId: fall2012.id, TimeSlo
 SemesterClass.create(SchoolClassId: woods1.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: genService.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-mathDept = Department.create( Name: 'MATH', Description: 'Mathematics')
+mathDept = Department.create( Name: 'MATH', Description: 'Mathematics', Color: 'lightblue')
 geometry = SchoolClass.create( Name:'Geometry', Description:'Geometry', DepartmentId: mathDept.id )
 math2 = SchoolClass.create( Name:'Math2', Description:'Math 2', DepartmentId: mathDept.id )
 algebra2 = SchoolClass.create( Name:'Algebra2', Description:'Algebra 2', DepartmentId: mathDept.id )
@@ -384,7 +384,7 @@ SemesterClass.create(SchoolClassId: math2.id, SemesterId: fall2012.id, TimeSlotI
 SemesterClass.create(SchoolClassId: precalc.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: precalch.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-musicDept = Department.create( Name: 'MUSICTHEATRE', Description: 'Music and Theatre')
+musicDept = Department.create( Name: 'MUSICTHEATRE', Description: 'Music and Theatre', Color: 'lightyellow')
 harmony1 = SchoolClass.create( Name:'Harmony1', Description:'Harmony 1', DepartmentId: musicDept.id )
 harmony2 = SchoolClass.create( Name:'Harmony2', Description:'Harmony 2', DepartmentId: musicDept.id )
 apHarmony = SchoolClass.create( Name:'ApHarmony', Description:'AP Harmony', DepartmentId: musicDept.id )
@@ -430,7 +430,7 @@ SemesterClass.create(SchoolClassId: sopranoAlto.id, SemesterId: fall2012.id, Tim
 SemesterClass.create(SchoolClassId: guitar1.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: stageProdCrew.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-otherDept = Department.create( Name: 'OTHER', Description: 'Other')
+otherDept = Department.create( Name: 'OTHER', Description: 'Other', Color: 'lightpink')
 lawEnforcement = SchoolClass.create( Name:'LawEnforcement', Description:'Law Enforcement', DepartmentId: otherDept.id )
 jrotc1 = SchoolClass.create( Name:'JROTC1', Description:'JROTC1', DepartmentId: otherDept.id )
 jrotc2 = SchoolClass.create( Name:'JROTC2', Description:'JROTC2', DepartmentId: otherDept.id )
@@ -460,7 +460,7 @@ SemesterClass.create(SchoolClassId: jrotc1.id, SemesterId: fall2012.id, TimeSlot
 SemesterClass.create(SchoolClassId: jrotc2.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: eslDirectedStudy.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-peDept = Department.create( Name: 'PE', Description: 'P.E. and Health')
+peDept = Department.create( Name: 'PE', Description: 'P.E. and Health', Color: 'lightblue')
 dance1 = SchoolClass.create( Name:'Dance1', Description:'Dance 1', DepartmentId: peDept.id )
 dance2 = SchoolClass.create( Name:'Dance2', Description:'Dance 2', DepartmentId: peDept.id )
 dance3 = SchoolClass.create( Name:'Dance3', Description:'Dance 3', DepartmentId: peDept.id )
@@ -513,7 +513,7 @@ SemesterClass.create(SchoolClassId: health.id, SemesterId: fall2012.id, TimeSlot
 SemesterClass.create(SchoolClassId: girlAthletics.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: advFitLife.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-scienceDept = Department.create( Name: 'SCIENCE', Description: 'Science')
+scienceDept = Department.create( Name: 'SCIENCE', Description: 'Science', Color: 'lightyellow')
 biology = SchoolClass.create( Name:'Biology', Description:'Biology', DepartmentId: scienceDept.id )
 biologyH = SchoolClass.create( Name:'BiologyH', Description:'Biology H', DepartmentId: scienceDept.id )
 apPhysics = SchoolClass.create( Name:'ApPhysics', Description:'AP Physics', DepartmentId: scienceDept.id )
@@ -570,7 +570,7 @@ SemesterClass.create(SchoolClassId: biology.id, SemesterId: fall2012.id, TimeSlo
 SemesterClass.create(SchoolClassId: zoology.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 SemesterClass.create(SchoolClassId: physicsH.id, SemesterId: fall2012.id, TimeSlotId: fourB.id)
 
-socialDept = Department.create( Name: 'SOCIALSTUDIES', Description: 'Social Studies')
+socialDept = Department.create( Name: 'SOCIALSTUDIES', Description: 'Social Studies', Color: 'lightpink')
 worldCiv = SchoolClass.create( Name:'WorldCiv', Description:'World Civilization', DepartmentId: socialDept.id )
 usHistory = SchoolClass.create( Name:'USHistory', Description:'US History', DepartmentId: socialDept.id )
 govtCit = SchoolClass.create( Name:'GovtCit', Description:'Government & Citizenship', DepartmentId: socialDept.id )

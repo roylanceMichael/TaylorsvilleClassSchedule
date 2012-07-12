@@ -7,8 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+			<div class="content-wrapper">
+				<div class="float-left">
+					<p class="site-title"><%= link_to "Taylorsville Schedule Change", home_index_path %></p><p><%= link_to "(admin only) Student Changes", semester_schedules_path %></p>
+				</div>
+				<div class="float-right">
+				<section id="login">
+					<% if user_signed_in? %>
+						Welcome <%= current_user.email %>!
+						<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>	
+					<% else %>
+						<%= link_to "Sign In", new_user_session_path %>
+					<% end %>
+					</div>
+				</section>
+				<nav>
+				</nav>
+			</div>
+		</header>
+		<div id="body">
+			<section class="content-wrapper main-content clear-fix">
+				<%= yield %>
+			</section>
+		</div>
 </body>
 </html>

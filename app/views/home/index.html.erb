@@ -1,27 +1,46 @@
-<h1>Taylorsville High School</h1>
-
-<% @semesterClassViewModel.each do |semesterClass| %>
-	<table>
+<% if user_signed_in? %>
+<form id="submitForm" action="/home/updateClasses" method="POST">
+<input type="submit" value="Submit" />
+<input type="hidden" value="<%= current_user.id %>" name="userId" >
+</br>
+<table style="width: 100%">
+	<tr>
+		<th rowspan="2" style="background: yellow">
+			No Selection
+		</th>
+		<% @timeSlots.each do |timeSlot| %>
+			<th style="background: yellow;"><%= timeSlot.Name %></th>
+		<% end %>
+	</tr>
+	<tr>
+		<% @timeSlots.each do |timeSlot| %>
+		<td>
+			<input type="radio" value="None" name="timeSlot[<%= timeSlot.id %>]" checked="checked" /> No Change
+		</td>
+		<% end %>
+	</tr>
+	<% @semesterClassViewModel.each do |semesterClass| %>
 		<tr>
-			<th rowspan="2">
+			<th rowspan="2" style="background: <%= semesterClass[:Department].Color %>;">
 				<%= semesterClass[:Department].Name %>
 			</th>
 			<% @timeSlots.each do |timeSlot| %>	
-				<th>
+				<th style="background: <%= semesterClass[:Department].Color %>;">
 					<%= timeSlot.Name %>
 				</th>
 			<% end %>
 		</tr>
 		<tr>
-			<td></td>
 			<% @timeSlots.each do |timeSlot| %>
 				<td>
 				<% semesterClass[:SemesterClasses].find_all{ |sc| sc.TimeSlotId == timeSlot.id }.each do |sc| %>
-					<%= sc.SchoolClass.Name %>
+					<input type="radio" value="<%= sc.id %>" name="timeSlot[<%= timeSlot.id %>]" /> <%= sc.SchoolClass.Description %> 
 					<br />
 				<% end %>
 				</td>
 			<% end %>
 		</tr>
+	<% end %>
 	</table>
+</form>
 <% end %>

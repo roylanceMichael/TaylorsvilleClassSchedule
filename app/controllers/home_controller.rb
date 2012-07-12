@@ -19,4 +19,30 @@ class HomeController < ApplicationController
         @semesterClassViewModel.push(anonType)
    end
   end
+  
+  def updateClasses
+    #first, delete this user from 
+    userId = params[:userId]
+    if(userId != nil)
+      SemesterSchedule.all.find_all { |t| t.UserId == userId }.each { |t| t.destroy }
+      #add new
+      timeSlots = params[:timeSlot]
+      print timeSlots
+      TimeSlot.all.each do |timeSlot|
+        castedTimeSlotId = timeSlot.id.to_s
+        if(timeSlots.has_key?(castedTimeSlotId) && timeSlots[castedTimeSlotId] != "None")
+          semesterSchedule = SemesterSchedule.new
+          semesterSchedule.UserId = userId
+          semesterSchedule.SemesterClassId = timeSlots[castedTimeSlotId].to_i
+          semesterSchedule.save
+          print '-------------------------------------'
+          print semesterSchedule.UserId
+          print semesterSchedule.SemesterClassId
+          print '-------------------------------------' 
+        end
+      end
+    end
+    print params
+    redirect_to "/", notice: 'School class was successfully created.' 
+  end
 end
