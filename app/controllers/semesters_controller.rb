@@ -3,6 +3,10 @@ class SemestersController < ApplicationController
   # GET /semesters
   # GET /semesters.json
   def index
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semesters = Semester.all
 
     respond_to do |format|
@@ -14,6 +18,10 @@ class SemestersController < ApplicationController
   # GET /semesters/1
   # GET /semesters/1.json
   def show
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester = Semester.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +33,10 @@ class SemestersController < ApplicationController
   # GET /semesters/new
   # GET /semesters/new.json
   def new
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester = Semester.new
 
     respond_to do |format|
@@ -35,12 +47,20 @@ class SemestersController < ApplicationController
 
   # GET /semesters/1/edit
   def edit
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester = Semester.find(params[:id])
   end
 
   # POST /semesters
   # POST /semesters.json
   def create
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester = Semester.new(params[:semester])
 
     respond_to do |format|
@@ -57,6 +77,10 @@ class SemestersController < ApplicationController
   # PUT /semesters/1
   # PUT /semesters/1.json
   def update
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester = Semester.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +97,10 @@ class SemestersController < ApplicationController
   # DELETE /semesters/1
   # DELETE /semesters/1.json
   def destroy
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester = Semester.find(params[:id])
     @semester.destroy
 

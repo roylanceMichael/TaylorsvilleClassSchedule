@@ -3,6 +3,10 @@ class SemesterSchedulesController < ApplicationController
   # GET /semester_schedules
   # GET /semester_schedules.json
   def index
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_schedules = SemesterSchedule.all
 
     respond_to do |format|
@@ -14,6 +18,10 @@ class SemesterSchedulesController < ApplicationController
   # GET /semester_schedules/1
   # GET /semester_schedules/1.json
   def show
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_schedule = SemesterSchedule.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +33,10 @@ class SemesterSchedulesController < ApplicationController
   # GET /semester_schedules/new
   # GET /semester_schedules/new.json
   def new
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_schedule = SemesterSchedule.new
 
     respond_to do |format|
@@ -35,12 +47,20 @@ class SemesterSchedulesController < ApplicationController
 
   # GET /semester_schedules/1/edit
   def edit
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_schedule = SemesterSchedule.find(params[:id])
   end
 
   # POST /semester_schedules
   # POST /semester_schedules.json
   def create
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_schedule = SemesterSchedule.new(params[:semester_schedule])
 
     respond_to do |format|
@@ -57,6 +77,10 @@ class SemesterSchedulesController < ApplicationController
   # PUT /semester_schedules/1
   # PUT /semester_schedules/1.json
   def update
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_schedule = SemesterSchedule.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +97,10 @@ class SemesterSchedulesController < ApplicationController
   # DELETE /semester_schedules/1
   # DELETE /semester_schedules/1.json
   def destroy
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_schedule = SemesterSchedule.find(params[:id])
     @semester_schedule.destroy
 

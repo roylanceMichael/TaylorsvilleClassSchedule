@@ -1,8 +1,13 @@
 
 class DepartmentsController < ApplicationController
+
   # GET /departments
   # GET /departments.json
   def index
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @departments = Department.all
 
     respond_to do |format|
@@ -14,6 +19,10 @@ class DepartmentsController < ApplicationController
   # GET /departments/1
   # GET /departments/1.json
   def show
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @department = Department.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +34,10 @@ class DepartmentsController < ApplicationController
   # GET /departments/new
   # GET /departments/new.json
   def new
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @department = Department.new
 
     respond_to do |format|
@@ -35,12 +48,20 @@ class DepartmentsController < ApplicationController
 
   # GET /departments/1/edit
   def edit
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @department = Department.find(params[:id])
   end
 
   # POST /departments
   # POST /departments.json
   def create
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @department = Department.new(params[:department])
 
     respond_to do |format|
@@ -57,6 +78,10 @@ class DepartmentsController < ApplicationController
   # PUT /departments/1
   # PUT /departments/1.json
   def update
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @department = Department.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +98,10 @@ class DepartmentsController < ApplicationController
   # DELETE /departments/1
   # DELETE /departments/1.json
   def destroy
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @department = Department.find(params[:id])
     @department.destroy
 

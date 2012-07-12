@@ -3,6 +3,10 @@ class SemesterClassesController < ApplicationController
   # GET /semester_classes
   # GET /semester_classes.json
   def index
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_classes = SemesterClass.all
 
     respond_to do |format|
@@ -14,6 +18,10 @@ class SemesterClassesController < ApplicationController
   # GET /semester_classes/1
   # GET /semester_classes/1.json
   def show
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_class = SemesterClass.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +33,10 @@ class SemesterClassesController < ApplicationController
   # GET /semester_classes/new
   # GET /semester_classes/new.json
   def new
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_class = SemesterClass.new
 
     respond_to do |format|
@@ -35,12 +47,20 @@ class SemesterClassesController < ApplicationController
 
   # GET /semester_classes/1/edit
   def edit
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_class = SemesterClass.find(params[:id])
   end
 
   # POST /semester_classes
   # POST /semester_classes.json
   def create
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_class = SemesterClass.new(params[:semester_class])
 
     respond_to do |format|
@@ -57,6 +77,10 @@ class SemesterClassesController < ApplicationController
   # PUT /semester_classes/1
   # PUT /semester_classes/1.json
   def update
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_class = SemesterClass.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +97,10 @@ class SemesterClassesController < ApplicationController
   # DELETE /semester_classes/1
   # DELETE /semester_classes/1.json
   def destroy
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @semester_class = SemesterClass.find(params[:id])
     @semester_class.destroy
 

@@ -3,6 +3,10 @@ class SchoolClassesController < ApplicationController
   # GET /school_classes
   # GET /school_classes.json
   def index
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @school_classes = SchoolClass.all
 
     respond_to do |format|
@@ -14,6 +18,10 @@ class SchoolClassesController < ApplicationController
   # GET /school_classes/1
   # GET /school_classes/1.json
   def show
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @school_class = SchoolClass.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +33,10 @@ class SchoolClassesController < ApplicationController
   # GET /school_classes/new
   # GET /school_classes/new.json
   def new
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @school_class = SchoolClass.new
 
     respond_to do |format|
@@ -35,12 +47,20 @@ class SchoolClassesController < ApplicationController
 
   # GET /school_classes/1/edit
   def edit
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @school_class = SchoolClass.find(params[:id])
   end
 
   # POST /school_classes
   # POST /school_classes.json
   def create
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @school_class = SchoolClass.new(params[:school_class])
 
     respond_to do |format|
@@ -57,6 +77,10 @@ class SchoolClassesController < ApplicationController
   # PUT /school_classes/1
   # PUT /school_classes/1.json
   def update
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @school_class = SchoolClass.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +97,10 @@ class SchoolClassesController < ApplicationController
   # DELETE /school_classes/1
   # DELETE /school_classes/1.json
   def destroy
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @school_class = SchoolClass.find(params[:id])
     @school_class.destroy
 

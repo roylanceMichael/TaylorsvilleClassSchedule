@@ -10,7 +10,10 @@
 	<header>
 			<div class="content-wrapper">
 				<div class="float-left">
-					<p class="site-title"><%= link_to "Taylorsville Schedule Change", home_index_path %></p><p><%= link_to "(admin only) Student Changes", semester_schedules_path %></p>
+					<p class="site-title"><%= link_to "Taylorsville Schedule Change", home_index_path %></p>
+					<% if(user_signed_in? && current_user.isAdmin()) %>
+						<p><%= link_to "Student Changes", semester_schedules_path %></p>
+					<% end %>
 				</div>
 				<div class="float-right">
 				<section id="login">

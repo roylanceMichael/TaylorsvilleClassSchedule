@@ -3,8 +3,11 @@ class TimeSlotsController < ApplicationController
   # GET /time_slots
   # GET /time_slots.json
   def index
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @time_slots = TimeSlot.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @time_slots }
@@ -14,6 +17,10 @@ class TimeSlotsController < ApplicationController
   # GET /time_slots/1
   # GET /time_slots/1.json
   def show
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @time_slot = TimeSlot.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +32,10 @@ class TimeSlotsController < ApplicationController
   # GET /time_slots/new
   # GET /time_slots/new.json
   def new
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @time_slot = TimeSlot.new
 
     respond_to do |format|
@@ -35,12 +46,22 @@ class TimeSlotsController < ApplicationController
 
   # GET /time_slots/1/edit
   def edit
-    @time_slot = TimeSlot.find(params[:id])
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
+    if(user_signed_in? && currentuser.isAdmin())
+      @time_slot = TimeSlot.find(params[:id])
+    end
   end
 
   # POST /time_slots
   # POST /time_slots.json
   def create
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @time_slot = TimeSlot.new(params[:time_slot])
 
     respond_to do |format|
@@ -57,6 +78,10 @@ class TimeSlotsController < ApplicationController
   # PUT /time_slots/1
   # PUT /time_slots/1.json
   def update
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @time_slot = TimeSlot.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +98,10 @@ class TimeSlotsController < ApplicationController
   # DELETE /time_slots/1
   # DELETE /time_slots/1.json
   def destroy
+    if(!checkAdmin())
+      redirect_to "/", notice: 'Admin only!'
+      return
+    end
     @time_slot = TimeSlot.find(params[:id])
     @time_slot.destroy
 
