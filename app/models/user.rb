@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :SemesterSchedules, :foreign_key => 'id'
   
   def isAdmin
-    if(self.email == 'roylance.michael@gmail.com')
+    if(self.email == 'roylance.michael@gmail.com' || self.email == 'troylance@graniteschools.org')
       return true
     end
     return false
