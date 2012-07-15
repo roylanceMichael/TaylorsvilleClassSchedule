@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<form id="submitForm" action="/home/updateClasses" method="POST">
+<%= form_for :form, :url => "/home/updateClasses", :method => "POST" do |f| %> 
 <input type="submit" value="Submit" />
 <input type="hidden" value="<%= current_user.id %>" name="userId" >
 </br>
@@ -42,5 +42,5 @@
 		</tr>
 	<% end %>
 	</table>
-</form>
+<% end %>
 <% end %>

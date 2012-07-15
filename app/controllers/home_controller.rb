@@ -35,14 +35,10 @@ class HomeController < ApplicationController
           semesterSchedule.UserId = userId
           semesterSchedule.SemesterClassId = timeSlots[castedTimeSlotId].to_i
           semesterSchedule.save
-          print '-------------------------------------'
-          print semesterSchedule.UserId
-          print semesterSchedule.SemesterClassId
-          print '-------------------------------------' 
         end
       end
     end
     print params
-    redirect_to "/", notice: 'School class was successfully created.' 
+    redirect_to home_index_path, notice: 'School class was successfully created.' 
   end
 end
