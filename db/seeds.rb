@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#new users
+User.create(email:'roylance.michael@gmail.com', password:'test1234', isadmin:true)
+
 #now for the semesters
 fall2012 = Semester.create(Name:'Fall2012', Description:'Fall 2012')
 

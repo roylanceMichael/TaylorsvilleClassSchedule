@@ -3,11 +3,15 @@ class SemesterSchedulesController < ApplicationController
   # GET /semester_schedules
   # GET /semester_schedules.json
   def index
-    if(!checkAdmin())
-      redirect_to "/", notice: 'Admin only!'
+    if(checkAdmin())
+      @semester_schedules = SemesterSchedule.all
+    elsif(user_signed_in?)
+      @semester_schedules = SemesterSchedule.select {|t| t.UserId == current_user.id }
+    else
+      redirect_to "/"
       return
     end
-    @semester_schedules = SemesterSchedule.all
+    
 
     respond_to do |format|
       format.html # index.html.erb

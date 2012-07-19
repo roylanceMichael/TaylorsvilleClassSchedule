@@ -24,7 +24,7 @@ class HomeController < ApplicationController
     #first, delete this user from 
     userId = params[:userId]
     if(userId != nil)
-      SemesterSchedule.all.find_all { |t| t.UserId == userId }.each { |t| t.destroy }
+      SemesterSchedule.all.find_all { |t| t.UserId == userId.to_i }.each { |t| t.destroy }
       #add new
       timeSlots = params[:timeSlot]
       print timeSlots
